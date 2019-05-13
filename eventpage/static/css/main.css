@@ -1,0 +1,50 @@
+.wrapper{font-size:15px;font-size: 5vmin;}
+.content1{}
+.content2{}
+.content3{font-size: 1.1em;}
+.content4{}
+.content5{font-size: 0.6em;}
+.detail1{font-size: 1.4em;}
+.detail2{font-size: 1.2em;}
+.detail3{font-size: 1.3em;}
+.detail4{font-size: 1.6em;}
+.detail5{font-size: 1.3em;}
+/*
+@media all and (min-width:1024px){
+
+}
+
+@media(max-width : 767px){
+    .wrapper{font-size:30px;}
+}
+
+@media(max-width : 750px){
+    .wrapper{font-size:25px;}
+}
+
+@media(max-width : 720px){
+    .wrapper{font-size:22px;}
+}
+
+@media(max-width : 640px){
+    .wrapper{font-size:22px;}
+}
+
+@media(max-width : 480px){
+    .wrapper{font-size:19px;}
+}
+
+@media(max-width : 400px){
+    .wrapper{font-size:15px;}
+}
+*/
+    /* input placeholder 사이즈, 글꼴 수정 */
+input::placeholder {
+  font-style: italic;
+}
+input::-webkit-input-placeholder {
+  font-style: italic;
+}
+input:-ms-input-placeholder {
+  font-style: italic;
+}
