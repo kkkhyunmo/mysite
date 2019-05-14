@@ -10,7 +10,7 @@ def laviniaA(request):
     return render(request, "eventpage/index.html", contents)
 
 def laviniaA_false(request, webtoon):
-    title = 'laviniaA_false'
+    title = 'laviniaA'
     contents = {
         'title' : title,
         'webtoon' : webtoon,
@@ -38,7 +38,7 @@ def laviniaN(request):
     return render(request, "eventpage/index.html", contents)
 
 def laviniaN_false(request, webtoon):
-    title = 'laviniaN_false'
+    title = 'laviniaN'
     contents = {
         'title' : title,
         'webtoon' : webtoon,
@@ -66,7 +66,7 @@ def rainbowhouseA(request):
     return render(request, "eventpage/index.html", contents)
 
 def rainbowhouseA_false(request, webtoon):
-    title = 'rainbowhouseA_false'
+    title = 'rainbowhouseA'
     contents = {
         'title' : title,
         'webtoon' : webtoon,
@@ -94,7 +94,7 @@ def rainbowhouseN(request):
     return render(request, "eventpage/index.html", contents)
 
 def rainbowhouseN_false(request, webtoon):
-    title = 'rainbowhouseN_false'
+    title = 'rainbowhouseN'
     contents = {
         'title' : title,
         'webtoon' : webtoon,
