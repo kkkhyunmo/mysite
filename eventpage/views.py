@@ -4,18 +4,18 @@ from django.core.exceptions import ObjectDoesNotExist
 
 def laviniaA(request):
     title = 'laviniaA'
-    contents = {
+    context = {
         'title' : title,
     }
-    return render(request, "eventpage/index.html", contents)
+    return render(request, "eventpage/index.html", context)
 
 def laviniaA_false(request, webtoon):
     title = 'laviniaA'
-    contents = {
+    context = {
         'title' : title,
         'webtoon' : webtoon,
     }
-    return render(request, "eventpage/index.html", contents)
+    return render(request, "eventpage/index.html", context)
 
 def laviniaA_success(request):
     if request.method == 'POST':
@@ -32,18 +32,18 @@ def laviniaA_success(request):
 
 def laviniaN(request):
     title = 'laviniaN'
-    contents = {
+    context = {
         'title' : title,
     }
-    return render(request, "eventpage/index.html", contents)
+    return render(request, "eventpage/index.html", context)
 
 def laviniaN_false(request, webtoon):
     title = 'laviniaN'
-    contents = {
+    context = {
         'title' : title,
         'webtoon' : webtoon,
     }
-    return render(request, "eventpage/index.html", contents)
+    return render(request, "eventpage/index.html", context)
 
 def laviniaN_success(request):
     if request.method == 'POST':
@@ -60,18 +60,18 @@ def laviniaN_success(request):
 
 def rainbowhouseA(request):
     title = 'rainbowhouseA'
-    contents = {
+    context = {
         'title' : title,
     }
-    return render(request, "eventpage/index.html", contents)
+    return render(request, "eventpage/index.html", context)
 
 def rainbowhouseA_false(request, webtoon):
     title = 'rainbowhouseA'
-    contents = {
+    context = {
         'title' : title,
         'webtoon' : webtoon,
     }
-    return render(request, "eventpage/index.html", contents)
+    return render(request, "eventpage/index.html", context)
 
 def rainbowhouseA_success(request):
     if request.method == 'POST':
@@ -88,18 +88,18 @@ def rainbowhouseA_success(request):
 
 def rainbowhouseN(request):
     title = 'rainbowhouseN'
-    contents = {
+    context = {
         'title' : title,
     }
-    return render(request, "eventpage/index.html", contents)
+    return render(request, "eventpage/index.html", context)
 
 def rainbowhouseN_false(request, webtoon):
     title = 'rainbowhouseN'
-    contents = {
+    context = {
         'title' : title,
         'webtoon' : webtoon,
     }
-    return render(request, "eventpage/index.html", contents)
+    return render(request, "eventpage/index.html", context)
 
 def rainbowhouseN_success(request):
     if request.method == 'POST':
