@@ -7,7 +7,7 @@
         <form method="POST" action="{% if title == 'laviniaA' %}{% url 'laviniaA_success' %}
                                     {% elif title == 'laviniaN' %}{% url 'laviniaN_success' %}
                                     {% elif title == 'rainbowhouseA' %}{% url 'rainbowhouseA_success' %}
-                                    {% elif title == 'rainbowhouseN' %}{% url 'rainbowhouseN_success' %}
+                                    {% elif title == 'rainbowhouseN' %}{% url 'rain    bowhouseN_success' %}
                                     {% endif %}" style="padding-top: 2.5%;">
             {% csrf_token %}
             <div class="container-content" style="width: 95%;margin: 0 auto;">
