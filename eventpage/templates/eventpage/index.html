@@ -7,7 +7,7 @@
         <form method="POST" action="{% if title == 'laviniaA' %}{% url 'laviniaA_success' %}
                                     {% elif title == 'laviniaN' %}{% url 'laviniaN_success' %}
                                     {% elif title == 'rainbowhouseA' %}{% url 'rainbowhouseA_success' %}
-                                    {% elif title == 'rainbowhouseN' %}{% url 'rain    bowhouseN_success' %}
+                                    {% elif title == 'rainbowhouseN' %}{% url 'rainbowhouseN_success' %}
                                     {% endif %}" style="padding-top: 2.5%;">
             {% csrf_token %}
             <div class="container-content" style="width: 95%;margin: 0 auto;">
@@ -25,7 +25,7 @@
                 </div>
                 <div>
                     <div>
-                        <img src="{% static 'images/img-gift.jpg' %}" style="max-width: 100%;height: auto;">
+                        <img src="{% static 'images/img-gift.png' %}" style="max-width: 100%;height: auto;">
                     </div>
                 </div>
                 <div class="content3" style="max-width: 1040px;background-color: #914a2c; color: #ffffff;margin: 0 auto;">
