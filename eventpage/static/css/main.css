@@ -1,4 +1,4 @@
-.wrapper{font-size:15px;font-size: 5vmin;}
+.wrapper{font-size:15px;font-size: 5vmin;font-family: S-CoreDream-3Light, sans-serif;}
 .content1{}
 .content2{}
 .content3{font-size: 1.1em;}
@@ -9,35 +9,13 @@
 .detail3{font-size: 1.3em;}
 .detail4{font-size: 1.6em;}
 .detail5{font-size: 1.3em;}
-/*
-@media all and (min-width:1024px){
 
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal; font-style: normal;
 }
 
-@media(max-width : 767px){
-    .wrapper{font-size:30px;}
-}
-
-@media(max-width : 750px){
-    .wrapper{font-size:25px;}
-}
-
-@media(max-width : 720px){
-    .wrapper{font-size:22px;}
-}
-
-@media(max-width : 640px){
-    .wrapper{font-size:22px;}
-}
-
-@media(max-width : 480px){
-    .wrapper{font-size:19px;}
-}
-
-@media(max-width : 400px){
-    .wrapper{font-size:15px;}
-}
-*/
     /* input placeholder 사이즈, 글꼴 수정 */
 input::placeholder {
   font-style: italic;
