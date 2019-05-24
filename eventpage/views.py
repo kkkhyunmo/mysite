@@ -1,11 +1,15 @@
 from django.shortcuts import render, redirect
 from .models import Info
 from django.core.exceptions import ObjectDoesNotExist
+import urllib.request
 
 def laviniaA(request):
+    ip = urllib.request.urlopen('https://api.ipify.org/').read().decode()
+    print(ip)
     title = 'laviniaA'
     context = {
         'title' : title,
+        'ip' : ip,
     }
     return render(request, "eventpage/index.html", context)
 
