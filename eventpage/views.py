@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect
-from .models import Info
+from .models import dbinfo
 from django.core.exceptions import ObjectDoesNotExist
-import urllib.request
+from django.db.models import Q
+
+
+def index(request):
+    return render(request, "eventpage/index1.html")
 
 def laviniaA(request):
     title = 'laviniaA'
@@ -10,26 +14,28 @@ def laviniaA(request):
     }
     return render(request, "eventpage/index.html", context)
 
-def laviniaA_false(request, webtoon):
-    title = 'laviniaA'
-    context = {
-        'title' : title,
-        'webtoon' : webtoon,
-    }
-    return render(request, "eventpage/index.html", context)
-
 def laviniaA_success(request):
     if request.method == 'POST':
+        queryset = dbinfo.objects.all()
+        name = queryset.filter(name=request.POST['name'])
+        phone = queryset.filter(phone=request.POST['phone'])
         try:
-            webtoon = Info.objects.get(webtoon=request.POST['webtoon']).webtoon
-            if webtoon:
-                return redirect('laviniaA_false', webtoon=webtoon)
+            if name and phone:
+                name = 'name'
+                phone = 'phone'
+                return render(request, "eventpage/index.html", {'name' : name, 'phone' : phone})
+            elif name:
+                name = 'name'
+                return render(request, "eventpage/index.html", {'name': name })
+            elif phone:
+                phone = 'phone'
+                return render(request, "eventpage/index.html", {'phone': phone})
+            else:
+                dbinfo.objects.create(name=request.POST['name'], phone=request.POST['phone'])
+
         except ObjectDoesNotExist:
-            Info.objects.create(webtoon=request.POST['webtoon'],
-                                name=request.POST['name'],
-                                phone=request.POST['phone'],
-                                )
-    return render(request, "eventpage/success.html")
+            pass
+        return render(request, "eventpage/success.html")
 
 def laviniaN(request):
     title = 'laviniaN'
@@ -38,26 +44,28 @@ def laviniaN(request):
     }
     return render(request, "eventpage/index.html", context)
 
-def laviniaN_false(request, webtoon):
-    title = 'laviniaN'
-    context = {
-        'title' : title,
-        'webtoon' : webtoon,
-    }
-    return render(request, "eventpage/index.html", context)
-
 def laviniaN_success(request):
     if request.method == 'POST':
+        queryset = dbinfo.objects.all()
+        name = queryset.filter(name=request.POST['name'])
+        phone = queryset.filter(phone=request.POST['phone'])
         try:
-            webtoon = Info.objects.get(webtoon=request.POST['webtoon']).webtoon
-            if webtoon:
-                return redirect('laviniaN_false', webtoon=webtoon)
+            if name and phone:
+                name = 'name'
+                phone = 'phone'
+                return render(request, "eventpage/index.html", {'name' : name, 'phone' : phone})
+            elif name:
+                name = 'name'
+                return render(request, "eventpage/index.html", {'name': name })
+            elif phone:
+                phone = 'phone'
+                return render(request, "eventpage/index.html", {'phone': phone})
+            else:
+                dbinfo.objects.create(name=request.POST['name'], phone=request.POST['phone'])
+
         except ObjectDoesNotExist:
-            Info.objects.create(webtoon=request.POST['webtoon'],
-                                name=request.POST['name'],
-                                phone=request.POST['phone'],
-                                )
-    return render(request, "eventpage/success.html")
+            pass
+        return render(request, "eventpage/success.html")
 
 def rainbowhouseA(request):
     title = 'rainbowhouseA'
@@ -66,26 +74,28 @@ def rainbowhouseA(request):
     }
     return render(request, "eventpage/index.html", context)
 
-def rainbowhouseA_false(request, webtoon):
-    title = 'rainbowhouseA'
-    context = {
-        'title' : title,
-        'webtoon' : webtoon,
-    }
-    return render(request, "eventpage/index.html", context)
-
 def rainbowhouseA_success(request):
     if request.method == 'POST':
+        queryset = dbinfo.objects.all()
+        name = queryset.filter(name=request.POST['name'])
+        phone = queryset.filter(phone=request.POST['phone'])
         try:
-            webtoon = Info.objects.get(webtoon=request.POST['webtoon']).webtoon
-            if webtoon:
-                return redirect('rainbowhouseA_false', webtoon=webtoon)
+            if name and phone:
+                name = 'name'
+                phone = 'phone'
+                return render(request, "eventpage/index.html", {'name' : name, 'phone' : phone})
+            elif name:
+                name = 'name'
+                return render(request, "eventpage/index.html", {'name': name })
+            elif phone:
+                phone = 'phone'
+                return render(request, "eventpage/index.html", {'phone': phone})
+            else:
+                dbinfo.objects.create(name=request.POST['name'], phone=request.POST['phone'])
+
         except ObjectDoesNotExist:
-            Info.objects.create(webtoon=request.POST['webtoon'],
-                                name=request.POST['name'],
-                                phone=request.POST['phone'],
-                                )
-    return render(request, "eventpage/success.html")
+            pass
+        return render(request, "eventpage/success.html")
 
 def rainbowhouseN(request):
     title = 'rainbowhouseN'
@@ -94,23 +104,25 @@ def rainbowhouseN(request):
     }
     return render(request, "eventpage/index.html", context)
 
-def rainbowhouseN_false(request, webtoon):
-    title = 'rainbowhouseN'
-    context = {
-        'title' : title,
-        'webtoon' : webtoon,
-    }
-    return render(request, "eventpage/index.html", context)
-
 def rainbowhouseN_success(request):
     if request.method == 'POST':
+        queryset = dbinfo.objects.all()
+        name = queryset.filter(name=request.POST['name'])
+        phone = queryset.filter(phone=request.POST['phone'])
         try:
-            webtoon = Info.objects.get(webtoon=request.POST['webtoon']).webtoon
-            if webtoon:
-                return redirect('rainbowhouseN_false', webtoon=webtoon)
+            if name and phone:
+                name = 'name'
+                phone = 'phone'
+                return render(request, "eventpage/index.html", {'name' : name, 'phone' : phone})
+            elif name:
+                name = 'name'
+                return render(request, "eventpage/index.html", {'name': name })
+            elif phone:
+                phone = 'phone'
+                return render(request, "eventpage/index.html", {'phone': phone})
+            else:
+                dbinfo.objects.create(name=request.POST['name'], phone=request.POST['phone'])
+
         except ObjectDoesNotExist:
-            Info.objects.create(webtoon=request.POST['webtoon'],
-                                name=request.POST['name'],
-                                phone=request.POST['phone'],
-                                )
-    return render(request, "eventpage/success.html")
+            pass
+        return render(request, "eventpage/success.html")

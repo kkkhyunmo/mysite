@@ -79,7 +79,7 @@ DATABASES = { 'default': {
                     'NAME':'user1_db',
                     'USER':'user1',
                     'PASSWORD':'limalima',
-                    'HOST':'lima-storyfac-test.cxrfgojf9iup.ap-northeast-2.rds.amazonaws.com', 'PORT':'3306'
+                    'HOST':'lima-storyfac-test.cxrfgojf9iup.ap-northeast-2.rds.amazonaws.com', 'PORT':'3306',
             }
 }
 

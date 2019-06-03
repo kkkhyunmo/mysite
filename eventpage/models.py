@@ -2,10 +2,9 @@ from django.db import models
 from django.utils import timezone
 
 
-class Info(models.Model):
-    webtoon = models.CharField(unique=True, max_length=200)
-    name = models.CharField(max_length=200)
-    phone = models.CharField(max_length=200)
+class dbinfo(models.Model):
+    name = models.CharField(unique=True, max_length=100)
+    phone = models.CharField(unique=True, max_length=11)
     created_date = models.DateTimeField(
             default=timezone.now)
 
