@@ -4,6 +4,11 @@ if( d == 'http://127.0.0.1:8000/index/' ||
     d == 'http://127.0.0.1:8000/lavinia-event-normal/' ||
     d == 'http://127.0.0.1:8000/rainbowhouse-event-arajji/' ||
     d == 'http://127.0.0.1:8000/rainbowhouse-event-normal/' ||
+    d == 'http://13.124.252.15:8000/index/' ||
+    d == 'http://13.124.252.15:8000/lavinia-event-arajji/' ||
+    d == 'http://13.124.252.15:8000/lavinia-event-normal/' ||
+    d == 'http://13.124.252.15:8000/rainbowhouse-event-arajji/' ||
+    d == 'http://13.124.252.15:8000/rainbowhouse-event-normal/' ||
     d == 'http://www.spooncomics.com/viewer/1593/22287' ||
     d == 'http://www.spooncomics.com/viewer/1593/22288' ||
     d == 'http://www.spooncomics.com/viewer/1558/22174' ||
