@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('ajax/validate_username/', views.validate_username, name='validate_username'),
+    path('ajax/validate_userphone/', views.validate_userphone, name='validate_userphone'),
     path('index/', views.index),
     path('lavinia-event-arajji/', views.laviniaA, name='laviniaA'),
     path('lavinia-event-arajji-success/', views.laviniaA_success, name='laviniaA_success'),

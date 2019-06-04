@@ -1,8 +1,32 @@
 from django.shortcuts import render, redirect
 from .models import dbinfo
 from django.core.exceptions import ObjectDoesNotExist
-from django.db.models import Q
+from django.http import JsonResponse
 
+def validate_username(request):
+    username = request.GET.get('username', None)
+
+    res = dbinfo.objects.filter(name=username).exists()
+    is_taken = True
+    if res:
+        is_taken = False
+
+    data = {
+        'is_taken': is_taken
+    }
+    return JsonResponse(data)
+
+def validate_userphone(request):
+    userphone = request.GET.get('userphone', None)
+
+    res = dbinfo.objects.filter(phone=userphone).exists()
+    as_taken = True
+    if res:
+        as_taken = False
+    data = {
+        'as_taken': as_taken
+    }
+    return JsonResponse(data)
 
 def index(request):
     return render(request, "eventpage/index1.html")
@@ -16,26 +40,11 @@ def laviniaA(request):
 
 def laviniaA_success(request):
     if request.method == 'POST':
-        queryset = dbinfo.objects.all()
-        name = queryset.filter(name=request.POST['name'])
-        phone = queryset.filter(phone=request.POST['phone'])
         try:
-            if name and phone:
-                name = 'name'
-                phone = 'phone'
-                return render(request, "eventpage/index.html", {'name' : name, 'phone' : phone})
-            elif name:
-                name = 'name'
-                return render(request, "eventpage/index.html", {'name': name })
-            elif phone:
-                phone = 'phone'
-                return render(request, "eventpage/index.html", {'phone': phone})
-            else:
-                dbinfo.objects.create(name=request.POST['name'], phone=request.POST['phone'])
-
+            dbinfo.objects.create(name=request.POST['name'], phone=request.POST['phone'])
         except ObjectDoesNotExist:
             pass
-        return render(request, "eventpage/success.html")
+    return render(request, "eventpage/success.html")
 
 def laviniaN(request):
     title = 'laviniaN'
@@ -46,23 +55,8 @@ def laviniaN(request):
 
 def laviniaN_success(request):
     if request.method == 'POST':
-        queryset = dbinfo.objects.all()
-        name = queryset.filter(name=request.POST['name'])
-        phone = queryset.filter(phone=request.POST['phone'])
         try:
-            if name and phone:
-                name = 'name'
-                phone = 'phone'
-                return render(request, "eventpage/index.html", {'name' : name, 'phone' : phone})
-            elif name:
-                name = 'name'
-                return render(request, "eventpage/index.html", {'name': name })
-            elif phone:
-                phone = 'phone'
-                return render(request, "eventpage/index.html", {'phone': phone})
-            else:
-                dbinfo.objects.create(name=request.POST['name'], phone=request.POST['phone'])
-
+            dbinfo.objects.create(name=request.POST['name'], phone=request.POST['phone'])
         except ObjectDoesNotExist:
             pass
         return render(request, "eventpage/success.html")
@@ -76,23 +70,8 @@ def rainbowhouseA(request):
 
 def rainbowhouseA_success(request):
     if request.method == 'POST':
-        queryset = dbinfo.objects.all()
-        name = queryset.filter(name=request.POST['name'])
-        phone = queryset.filter(phone=request.POST['phone'])
         try:
-            if name and phone:
-                name = 'name'
-                phone = 'phone'
-                return render(request, "eventpage/index.html", {'name' : name, 'phone' : phone})
-            elif name:
-                name = 'name'
-                return render(request, "eventpage/index.html", {'name': name })
-            elif phone:
-                phone = 'phone'
-                return render(request, "eventpage/index.html", {'phone': phone})
-            else:
-                dbinfo.objects.create(name=request.POST['name'], phone=request.POST['phone'])
-
+            dbinfo.objects.create(name=request.POST['name'], phone=request.POST['phone'])
         except ObjectDoesNotExist:
             pass
         return render(request, "eventpage/success.html")
@@ -106,23 +85,8 @@ def rainbowhouseN(request):
 
 def rainbowhouseN_success(request):
     if request.method == 'POST':
-        queryset = dbinfo.objects.all()
-        name = queryset.filter(name=request.POST['name'])
-        phone = queryset.filter(phone=request.POST['phone'])
         try:
-            if name and phone:
-                name = 'name'
-                phone = 'phone'
-                return render(request, "eventpage/index.html", {'name' : name, 'phone' : phone})
-            elif name:
-                name = 'name'
-                return render(request, "eventpage/index.html", {'name': name })
-            elif phone:
-                phone = 'phone'
-                return render(request, "eventpage/index.html", {'phone': phone})
-            else:
-                dbinfo.objects.create(name=request.POST['name'], phone=request.POST['phone'])
-
+            dbinfo.objects.create(name=request.POST['name'], phone=request.POST['phone'])
         except ObjectDoesNotExist:
             pass
         return render(request, "eventpage/success.html")

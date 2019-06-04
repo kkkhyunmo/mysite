@@ -1,18 +1,96 @@
 {% extends 'eventpage/header.html' %}
 {% load static %}
 {% block content %}
-<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-<script type="text/javascript">
-    var s = '{{name}}';
-    var m = '{{phone}}';
-    if(s && m){
-        alert('이미 등록된 아이디 또는 번호 입니다.');
-    } else if(s){
-        alert('이미 등록된 아이디 입니다.');
-    } else if(m){
-        alert('이미 등록된 번호 입니다.');
-    } else {
+<script>
+var d = document.referrer
+if( d == 'http://127.0.0.1:8000/index/' ||
+    d == 'http://127.0.0.1:8000/lavinia-event-arajji/' ||
+    d == 'http://127.0.0.1:8000/lavinia-event-normal/' ||
+    d == 'http://127.0.0.1:8000/rainbowhouse-event-arajji/' ||
+    d == 'http://127.0.0.1:8000/rainbowhouse-event-normal/' ||
+    d == 'http://13.124.252.15:8000/index/' ||
+    d == 'http://13.124.252.15:8000/lavinia-event-arajji/' ||
+    d == 'http://13.124.252.15:8000/lavinia-event-normal/' ||
+    d == 'http://13.124.252.15:8000/rainbowhouse-event-arajji/' ||
+    d == 'http://13.124.252.15:8000/rainbowhouse-event-normal/' ||
+    d == 'http://www.spooncomics.com/viewer/1593/22287' ||
+    d == 'http://www.spooncomics.com/viewer/1593/22288' ||
+    d == 'http://www.spooncomics.com/viewer/1558/22174' ||
+    d == 'http://www.spooncomics.com/viewer/1558/22295'){
+    alert(d);
+}else{
+    alert('잘못된 접근입니다');
+    window.location.href = 'http://www.spooncomics.com';
+}
+</script>
+<script>
+    function validate_username() {
+         var result = false;
+         var username = $("#username").val();
+         console.log(username);
+         $.ajax({
+            url: '/ajax/validate_username/',
+            data: {
+              'username': username
+            },
+            dataType: 'json',
+            async: false,
+            success: function (data) {
+              console.log('username'+data.is_taken);
+              if (data.is_taken) {
+                result = true;
+              }
+            }
+         });
+        print(111)
+         return result;
     }
+    function validate_userphone(){
+        var result = false;
+        var userphone = $("#userphone").val();
+        console.log(userphone);
+           $.ajax({
+            url: '/ajax/validate_userphone/',
+            data: {
+              'userphone': userphone
+            },
+            dataType: 'json',
+            async: false,
+            success: function (data) {
+              console.log('userphone'+data.as_taken);
+              if (data.as_taken){
+                result = true;
+              }
+            }
+         });
+
+         return result;
+    }
+
+      $(function(){
+         $("#getResult").click(function(){
+            $("#error1").css("display","none");
+            $("#error2").css("display","none");
+
+            var v_username = validate_username();
+            var v_userphone = validate_userphone();
+
+            console.log(v_username);
+            console.log(v_userphone);
+
+            if( v_username == false ){
+                $("#error1").css("display","block");
+            }
+            if( v_userphone == false ){
+               $("#error2").css("display","block");
+            }
+
+            if( v_username == true && v_userphone == true){
+                return true;
+            }
+            return false;
+         });
+      });
 </script>
 <div class="wrapper">
     <div class="container">
@@ -47,36 +125,36 @@
                         2019.06.01 ~ 2019.06.30<br><br>
                         대상<br>
                         '라비니아','레인보우하우스' 웹툰을<br>
-                         구독한 스푼코믹스 유료이용자
+                         구매한 스푼코믹스 유료이용자
                     </div>
                 </div>
                 <div class="content4">
                     <div>
                         <p class="detail1">이벤트 응모하기</p>
                         <p class="detail2">스푼코믹스 아이디 *</p>
-                        <input class="detail3" type="email" id="name" name="name" placeholder="{% if name == 'name' %}이미 등록된 아이디입니다.{% else %}spooncomics@email.com{% endif %}"
-                               required="required" maxlength="25" />
+                        <input class="detail3" type="email" id="username" name="name" placeholder="spooncomics@email.com" required="required" maxlength="25" />
+                        <p class="error" id="error1">이미 등록된 아이디 입니다.</p>
                         <p class="detail2">휴대폰 번호 *</p>
-                        <input class="detail3" type="tel" id="phone" name="phone" placeholder="{% if phone == 'phone' %}이미 등록된 번호입니다.{% else %} - 없이 입력 하세요.{% endif %}"
-                               required="required" maxlength="11"/><br>
-                        <button class="detail4" type="submit">완료</button>
+                        <input class="detail3" type="tel" id="userphone" name="phone" placeholder=" - 없이 입력 하세요." required="required" maxlength="11"/><br>
+                        <p class="error" id="error2">이미 등록된 번호 입니다.</p>
+                        <button class="detail4" type="submit" id="getResult">완료</button>
 
                     </div>
                 </div>
                 <div class="content5">
                     <div>
-                        <p class="detail5">&nbsp&nbsp유의사항</p>
-                        &nbsp- 웹툰을 구독한 스푼 코믹스 ID가 아니면 당첨에서 제외가 됩니다.<br>
-                        &nbsp- 본 이벤트는 해당 페이지를 통해서만 이벤트 참여가 가능합니다.<br>
-                        &nbsp- 당첨발표는 이벤트 종료 후 입력하신 휴대폰 번호로 안내됩니다.<br>
-                        &nbsp- 안내 문자 발송 후 2일이내 답장이 없으실 경우 당첨이 취소됩니다.<br>
-                        &nbsp- 경품은 이벤트 사정에 따라 고객의 동의 없이 변경될 수 있습니다.<br>
-                        &nbsp- 이벤트 참여 후 휴대폰 명의 변경, 해지, 번호 이동 시 <br>
-                        &nbsp&nbsp&nbsp&nbsp당첨 취소 처리될 수 있습니다.<br>
-                        &nbsp- 경품은 타 상품으로 교환 및 환불이 불가능합니다.<br>
-                        &nbsp- 이벤트 문의 1811-1240<br>
-                        &nbsp&nbsp&nbsp&nbsp(평일 오전10시~오후5시, 토/일/공휴일 휴무)<br>
-                        &nbsp
+                        <p class="detail5">&nbsp;&nbsp;유의사항</p>
+                        &nbsp;- 웹툰을 구매한 스푼 코믹스 ID가 아니면 당첨에서 제외가 됩니다.<br>
+                        &nbsp;- 본 이벤트는 해당 페이지를 통해서만 이벤트 참여가 가능합니다.<br>
+                        &nbsp;- 당첨발표는 이벤트 종료 후 입력하신 휴대폰 번호로 안내됩니다.<br>
+                        &nbsp;- 안내 문자 발송 후 2일이내 답장이 없으실 경우 당첨이 취소됩니다.<br>
+                        &nbsp;- 경품은 이벤트 사정에 따라 고객의 동의 없이 변경될 수 있습니다.<br>
+                        &nbsp;- 이벤트 참여 후 휴대폰 명의 변경, 해지, 번호 이동 시 <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;당첨 취소 처리될 수 있습니다.<br>
+                        &nbsp;- 경품은 타 상품으로 교환 및 환불이 불가능합니다.<br>
+                        &nbsp;- 이벤트 문의 1811-1240<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;(평일 오전10시~오후5시, 토/일/공휴일 휴무)<br>
+                        &nbsp;
                     </div>
                 </div>
             </div>
