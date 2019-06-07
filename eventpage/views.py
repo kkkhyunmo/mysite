@@ -59,7 +59,7 @@ def laviniaN_success(request):
             dbinfo.objects.create(name=request.POST['name'], phone=request.POST['phone'])
         except ObjectDoesNotExist:
             pass
-        return render(request, "eventpage/success.html")
+    return render(request, "eventpage/success.html")
 
 def rainbowhouseA(request):
     title = 'rainbowhouseA'

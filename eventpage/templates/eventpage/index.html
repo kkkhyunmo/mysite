@@ -27,7 +27,6 @@ if( d == 'http://127.0.0.1:8000/index/' ||
     function validate_username() {
          var result = false;
          var username = $("#username").val();
-         console.log(username);
          $.ajax({
             url: '/ajax/validate_username/',
             data: {
@@ -36,19 +35,16 @@ if( d == 'http://127.0.0.1:8000/index/' ||
             dataType: 'json',
             async: false,
             success: function (data) {
-              console.log('username'+data.is_taken);
               if (data.is_taken) {
                 result = true;
               }
             }
          });
-        print(111)
          return result;
     }
     function validate_userphone(){
         var result = false;
         var userphone = $("#userphone").val();
-        console.log(userphone);
            $.ajax({
             url: '/ajax/validate_userphone/',
             data: {
@@ -57,13 +53,11 @@ if( d == 'http://127.0.0.1:8000/index/' ||
             dataType: 'json',
             async: false,
             success: function (data) {
-              console.log('userphone'+data.as_taken);
               if (data.as_taken){
                 result = true;
               }
             }
          });
-
          return result;
     }
 
@@ -74,9 +68,6 @@ if( d == 'http://127.0.0.1:8000/index/' ||
 
             var v_username = validate_username();
             var v_userphone = validate_userphone();
-
-            console.log(v_username);
-            console.log(v_userphone);
 
             if( v_username == false ){
                 $("#error1").css("display","block");
