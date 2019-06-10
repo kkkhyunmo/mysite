@@ -4,8 +4,8 @@
 .container{text-align: center;background-color: #e8ca62}
 .container-content{width: 95%;margin: 0 auto;}
 .content1{max-width: 1030px;background-color: #ffffff;margin:0 auto;padding: 5% 5px 0px 5px;}
-.content2{max-width: 1040px;background-color: #ffffff;margin:0 auto;padding: 5% 0 4% 0;color:#6d6e71;font-family: S-CoreDream-6Bold}
-.content3{font-size: 1.1em;max-width: 1040px;background-color: #914a2c; color: #ffffff;margin: 0 auto;font-family: S-CoreDream-5Medium}
+.content2{max-width: 1040px;background-color: #ffffff;margin:0 auto;padding: 5% 0 4% 0;color:#6d6e71;font-family: S-CoreDream-6Bold;}
+.content3{font-size: 1.1em;max-width: 1040px;background-color: #914a2c; color: #ffffff;margin: 0 auto;font-family: S-CoreDream-5Medium;}
 .content3 div:nth-child(1){padding: 5% 0 5% 0;}
 .content4{max-width: 1040px;background-color: #ffffff;margin:0 auto;font-family: S-CoreDream-6Bold, sans-serif;}
 .content5{font-size: 0.6em;max-width: 1040px;margin: 3% auto;text-align: left;}
