@@ -4,8 +4,8 @@
 .container{text-align: center;background-color: #e8ca62}
 .container-content{width: 95%;margin: 0 auto;}
 .content1{max-width: 1030px;background-color: #ffffff;margin:0 auto;padding: 5% 5px 0px 5px;}
-.content2{max-width: 1040px;background-color: #ffffff;margin:0 auto;padding: 5% 0 4% 0;color:#6d6e71;font-family: S-CoreDream-6Bold, sans-serif;}
-.content3{font-size: 1.1em;max-width: 1040px;background-color: #914a2c; color: #ffffff;margin: 0 auto;font-family: S-CoreDream-5Medium, sans-serif;}
+.content2{max-width: 1040px;background-color: #ffffff;margin:0 auto;padding: 5% 0 4% 0;color:#6d6e71;font-family: S-CoreDream-6Bold}
+.content3{font-size: 1.1em;max-width: 1040px;background-color: #914a2c; color: #ffffff;margin: 0 auto;font-family: S-CoreDream-5Medium}
 .content3 div:nth-child(1){padding: 5% 0 5% 0;}
 .content4{max-width: 1040px;background-color: #ffffff;margin:0 auto;font-family: S-CoreDream-6Bold, sans-serif;}
 .content5{font-size: 0.6em;max-width: 1040px;margin: 3% auto;text-align: left;}
@@ -21,20 +21,22 @@
 
 @font-face {
     font-family: 'S-CoreDream-6Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff');
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.eot');
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
-         url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff2');
-         url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('truetype');
+         url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff2') format('woff2');
+         url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.eot?#iefix') format('embedded-opentype'); /* IE 6 ~8 */
+         url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.ttf') format('truetype');
 
     font-weight: normal; font-style: normal;
 }
 
 @font-face {
-    font-family: 'S-CoreDream-5Medium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff');
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.eot');
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
-         url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff2');
-         url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('truetype');
+         url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff2') format('woff2');
+         url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.eot?#iefix') format('embedded-opentype'); /* IE 6 ~8 */
+         url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.ttf') format('truetype');
 
     font-weight: normal; font-style: normal;
 }
@@ -60,31 +62,3 @@ input:-ms-input-placeholder {
     .detail4 { height: 50px;}
     .detail6 { ;}
 }
-
-/* Safari 6.1+ (9.0 is the latest version of Safari at this time) */
-
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
-{ @media {
-    .safari_only {
-        .wrapper{font-size:15px;font-size: 4vmin;}
-        .form{padding-top: 2.5%;}
-        .span1{font-size: 1.1em;color:#b82842;}
-        .container{text-align: center;background-color: #e8ca62}
-        .container-content{width: 95%;margin: 0 auto;}
-        .content1{max-width: 1030px;background-color: #ffffff;margin:0 auto;padding: 5% 5px 0px 5px;}
-        .content2{max-width: 1040px;background-color: #ffffff;margin:0 auto;padding: 5% 0 4% 0;color:#6d6e71;font-family: S-CoreDream-6Bold, sans-serif;}
-        .content3{font-size: 1.1em;max-width: 1040px;background-color: #914a2c; color: #ffffff;margin: 0 auto;font-family: S-CoreDream-5Medium, sans-serif;}
-        .content3 div:nth-child(1){padding: 5% 0 5% 0;}
-        .content4{max-width: 1040px;background-color: #ffffff;margin:0 auto;font-family: S-CoreDream-6Bold, sans-serif;}
-        .content5{font-size: 0.6em;max-width: 1040px;margin: 3% auto;text-align: left;}
-        .img{max-width: 100%;height: auto;}
-        .img2{}
-        .detail1{font-size: 1.3em;margin-top: 2%;padding-top: 5%;margin-bottom: 0;}
-        .detail2{font-size: 0.9em;margin-bottom: 0.2em;}
-        .detail3{font-size: 1.1em;border-radius: 3px;border: solid 2px #a2a2a2;text-align: center;width: 60%;height: 60px;}
-        .detail4{font-size: 1.6em;width: 60%; background-color: #914a2c; color: #ffffff;margin: 5% 0 5% 0;cursor: pointer;height:90px}
-        .detail5{font-size: 1.3em;font-family: S-CoreDream-6Bold, sans-serif;}
-        .detail6{font-size: 1.3em;font-family: S-CoreDream-5Medium, sans-serif;}
-        .error{font-size: 1.2em; color: red;margin: 0;display: none;}
-    }
-}}
