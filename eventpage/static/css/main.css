@@ -55,10 +55,10 @@ input:-ms-input-placeholder {
     /* 반응형 모바일, pc 간략히 구분 */
 @media screen and (max-width: 768px)
 {
-    .wrapper{ font-size: 3vmin;}
+    .wrapper{ font-size: 3.5vmin;}
     .content1 > img{ max-width: 200px; }
-    .content2 { font-size: 3vmin;}
+    .content2 { font-size: 3.8vmin;}
     .detail3 { height: 35px; }
-    .detail4 { height: 50px;}
+    .detail4 { height: 45px;}
     .detail6 { ;}
 }
