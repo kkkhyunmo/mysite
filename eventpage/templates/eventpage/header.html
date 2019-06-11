@@ -17,6 +17,12 @@
           gtag('config', 'UA-141790525-1');
     </script>
 
+    <script type="text/javascript">
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            window.history.close()
+        };
+    </script>
 
     <title>{{title}}</title>
 </head>
